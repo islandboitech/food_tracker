@@ -1,0 +1,25 @@
+{% extends "template_main.html" %}
+
+{% block content %}
+<div id="content-main">
+    <h1>{{page_title}}</h1>
+    <form role="form" action="" method="POST">
+      {% csrf_token %}
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr><th>Name</th><td>{{food_form.name}}</td></tr>
+          <tr><th>Calories (kcal)</th><td>{{food_form.calories}}</td></tr>
+          <tr><th>Total Fat (g)</th><td>{{food_form.total_fat}}</td></tr>
+          <tr><th>Saturated Fat (g)</th><td>{{food_form.saturated_fat}}</td></tr>
+          <tr><th>Cholesterol (mg)</th><td>{{food_form.cholesterol}}</td></tr>
+          <tr><th>Sodium (mg)</th><td>{{food_form.sodium}}</td></tr>
+          <tr><th>Total Carbohydrate (g)</th><td>{{food_form.total_carbohydrate}}</td></tr>
+          <tr><th>Dietary Fibre (g)</th><td>{{food_form.dietary_fibre}}</td></tr>
+          <tr><th>Sugar (g)</th><td>{{food_form.sugar}}</td></tr>
+          <tr><th>Protein (g)</th><td>{{food_form.protein}}</td></tr>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-success">Save</button>
+      <a class="btn btn-secondary" href="{% url 'food:food-list' %}" role="button">Cancle</a>
+    </form></div>
+{% endblock content %}

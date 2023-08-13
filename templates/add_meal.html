@@ -1,0 +1,27 @@
+{% include "template_main.html" %}
+
+{% block content %}
+<div id="content-main">
+  <h1>{{page_title}}</h1>
+    <form role="form" action="" method="POST">
+      {% csrf_token %}
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <th>Food</th>
+            <th>{{ meal_form.food }}</th>
+          </tr>
+          <tr>
+            <th>Serving Size</th>
+            <th>{{ meal_form.serving_size }}</th>
+          </tr>
+          <tr>
+            <th>Meal Time</th>
+            <th>{{ meal_form.meal_time }}</th>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-success">Save</button>
+      <a class="btn btn-secondary" href="{% url 'food:index' %}" role="button">Cancle</a>
+    </form></div>
+{% endblock content %}
